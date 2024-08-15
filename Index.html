@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation</title>
+</head>
+<body>
+    <!-- Sivana Page -->
+    <div id="sivana-page" class="page">
+        <input type="text" placeholder="Search..." class="search-bar">
+        <div class="segment">Segment 1</div>
+        <div class="segment">Segment 2</div>
+        <div class="segment">Segment 3</div>
+        <div class="segment">Segment 4</div>
+        <div class="segment">Segment 5</div>
+    </div>
+
+    <!-- Garudamap Page -->
+    <div id="garudamap-page" class="page" style="display: none;">
+        <iframe src="https://my.atlist.com/map/382e5b95-68dd-446c-9e32-44a290b4c10b/?share=true" allow="geolocation 'self' https://my.atlist.com" width="340px" height="720px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen id="atlist-embed"></iframe>
+
+
+    </div>
+
+    <!-- Travel Map Page -->
+    <div id="travelmap-page" class="page" style="display: none;">
+         <iframe src="https://my.atlist.com/map/382e5b95-68dd-446c-9e32-44a290b4c10b/?share=true" allow="geolocation 'self' https://my.atlist.com" width="340px" height="720px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen id="atlist-embed"></iframe>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <button onclick="showPage('sivana-page')" transition: 0.5s >Sivana</button>
+        <button onclick="showPage('garudamap-page')">Garudamap</button>
+        <button onclick="showPage('travelmap-page')">TravelMap</button>
+    </div>
+<script>
+function showPage(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+    });
+
+    // Show the selected page
+    document.getElementById(pageId).style.display = 'block';
+}
+</script>
+<style>
+ body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.page2 {
+    box-sizing: border-box
+    ;
+}
+.page {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.segment {
+    background-color: #f1f1f1;
+    padding: 50px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.navbar {
+    position: fixed;
+    border-radius: 5px;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.navbar button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.navbar button:hover {
+    background-color: #555;
+}
+
+.navbar button:active {
+    background-color: #666;
+}
+   
+</style>
+</body>
+
+</html>
